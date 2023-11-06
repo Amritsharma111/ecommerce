@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body,h1,h2,h3,h4,h5,h6{
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    font-weight: 400;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 600;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration:none;
+}
+@media (min-width: 1200px){}
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1280px;
+}
+@mixin res1($max:768px){
+    @media (max-width:$max){
+        @content;
+    }
+}
+header{
+    .top{
+        background: #123026;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    nav{
+        position: relative;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        @include res1{
+            justify-content:space-around;
+            padding: 10px;
+        }
+        .menu{
+            display:none;
+            @include res1{
+                display: block;
+                padding-bottom: 10px;
+                padding-left: 15px;
+            }
+        }
+        img{
+            @include res1{
+                width: 145px;
+            }
+        }
+        ul{
+            display: flex;
+            gap: 25px;
+            @include res1{
+                gap: 15px;
+            }
+            
+            a{
+                color: #123026;
+                font-size: 14px;
+                &:hover{
+                    border-bottom: 1px solid #123026;
+                }
+            }
+            .npl{
+                @include res1{
+                    display:none;
+                }
+            }
+            .p{
+                @include res1{
+                    display:none;
+                }
+            }
+        }
+        .main{ 
+            ul{ 
+                display: flex;
+                gap: 25px;
+                @include res1{
+                text-align: center;
+                display: none;                    
+                position: absolute;
+                bottom:-300px;
+                left: 0;
+                flex-direction: column;
+                background: #123026;
+                width: 100%;
+                padding: 10px;
+                li{
+                    padding: 10px 0;
+                }
+                a{
+                    font-size: 16px;
+                    color: white;
+                    
+                }
+            }
+            }
+            
+        }
+    }
+}
+.active{
+    color:gray;
+}
+ul.show{
+    display: block !important;
+}
+.bb{
+    a{
+        border: none !important;
+    }
+}
+.home{
+    background:url(./assets/homebg.png);
+    padding:18% 0;
+    @include res1{
+        padding:20% 10px;
+    }
+    h1{
+        font-size: 43px;
+    }
+    p{
+        font-size: 24px;
+        font-weight: bold;
+        color: rgb(245, 239, 239)
+    }
+    a{
+        font-size: 15px;
+        padding:10px 20px;
+        color: black;
+        background:white;
+        &:hover{
+            border: 2px solid white;
+        }
+    }
+}
+.first{
+    padding:40px 0;
+    @include res1{
+        padding:40px 10px;
+    }
+    h1{
+        color: #123026;
+        width: 50%;
+        @include res1{
+            width: 95%;
+        }
+        margin: auto;
+    }
+    .grid{
+        display:grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 20px;
+        @include res1{
+            grid-template-columns:auto auto;
+        }
+        .ibox{
+            overflow: hidden;
+            img{
+                height:363px;
+                @include res1{
+                    height:170px;
+                }
+                transition: 0.9s;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        p{
+            font-size: 18px;
+            color: #123026;
+            font-weight: bold;
+        }
+    }
+
+}
+.autumn{
+    background:url(./assets/autumnbg.png);
+    padding: 23%;
+    @include res1{
+        padding:23% 10px;
+    }
+    .div{
+        width: 70%;
+        @include res1{
+            width: 95%;
+        }
+        margin: auto;
+    }
+    h1{
+        color: white;
+    }
+    p{
+        color: rgb(222, 217, 217);
+    }
+    a{
+        padding:10px 20px;
+        border:1px solid white;
+        border-radius: 13px;
+        color: white;
+        &:hover{
+            border: 2px solid white;
+        }
+    }
+}
+.second{
+    h1{
+        color: #123026;
+    }
+    .link{
+        padding:10px 20px;
+        background: #123026;
+        color: white;
+        &:hover{
+            border: 2px solid #123026 ;
+        }
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 20px;
+        @include res1{
+            grid-template-columns: auto;
+        }
+        img{
+            height: 414px;
+            @include res1{
+                height: auto;
+            }
+        }
+        a{
+            color: #123026;
+            font-weight: bold;
+        }
+    }
+}
+.third{
+    background: url(./assets/third.png);
+    padding: 12% 0;
+    .div{
+        width: 40%;
+        @include res1{
+            width: 95%;
+        }
+        margin: auto;
+        a{
+            color: #123026;
+            background: white;
+            padding: 15px 20px;
+            &:hover{
+                border: 2px solid white;
+            }
+        }
+    }
+}
+.accordion{
+    color: #123026;
+    width: 75%;
+    @include res1{
+        width: 95%;
+    }
+    margin: auto;
+    a{
+        padding: 10px 20px;
+        background: #889792;
+        color: #123026;
+        border-radius: 12px;
+    }
+}
+.frth{
+    .d-flex{
+        color: #123026;
+        @include res1{
+            flex-direction: column;
+        }
+        h4{
+            width: 70%;
+            margin: auto;
+            @include res1{
+                width: 95%;
+            }
+        }
+    }
+}
+.press{
+    h1{
+        color: #123026;
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        justify-content: space-around;
+        @include res1{
+            grid-template-columns: auto auto;
+        }
+    }
+}
+.insta{
+    h1{
+        color: #123026;
+    }
+    a{
+        text-decoration:underline;
+        color: #123026;
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 20px;
+        @include res1{
+            grid-template-columns: auto;
+        }
+        img{
+            height: 382px;
+            @include res1{
+                height:auto;
+            }
+        }
+    }
+}
+.touch{
+    background: #f3f3f3;
+    padding: 5% 0;
+    color: #123026;
+    p{
+        font-size: 22px;
+    }
+    form{
+        input{
+            padding: 8px;
+            @include res1{
+                width: 80%;
+                margin-top: 5px;
+            }
+        }
+        input[type=submit]{
+            background: #123026;
+            color: white;
+            border-color: #123026;
+            margin-left: 3px;
+        }
+    }
+}
+footer{
+    @include res1{
+        text-align: center;
+    }
+    background: #123026;
+    padding :60px 0;
+    h5{
+        @include res1{
+            padding-top: 20px;
+        }
+    }
+    li{
+        padding-top: 10px;
+        a{
+            color: white;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    .ul{
+        display:flex;
+        gap: 20px;
+        @include res1{
+            justify-content: center;
+        }
+        a{
+            color: white;
+            font-size: 20px;
+        }
+    }
+}
+.bestseller{
+    .btop{
+        background: url(./assets/bestseller.png);
+        padding: 12% 0;
+        p{
+            font-size: 25px;
+        }
+    }
+    a{
+        color: #123026;
+    }
+    .grid{
+        display:grid;
+        grid-template-columns: auto auto auto auto; 
+        gap: 20px;
+        .name{
+            font-weight: bold;
+            font-size: 14px;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        .icon{
+            font-size: 12px;
+        }
+        .price{
+            font-weight: bold;
+        }
+        button{
+            background: #123026;
+            border: none;border-radius: 5px;
+            color: white;
+            &:hover{
+                background: #889792;
+            }
+        }
+        .ibox{
+            overflow: hidden;
+            img{
+                height: 300px;
+                transition: 0.9s;
+                @include res1{
+                    height: auto;
+                }
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        @include res1{
+            grid-template-columns: auto;
+        }
+    }
+}
