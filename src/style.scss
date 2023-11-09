@@ -234,7 +234,10 @@ ul.show{
             grid-template-columns: auto;
         }
         img{
-            height: 414px;
+            height: 424px;
+            @include res1{
+                height: auto;
+            }
         }
         a{
             color: #123026;
@@ -320,6 +323,9 @@ ul.show{
         }
         img{
             height: 382px;
+            @include res1{
+                height:auto;
+            }
         }
     }
 }
